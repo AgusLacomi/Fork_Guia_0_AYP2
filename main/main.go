@@ -42,7 +42,10 @@ func PuntoUno(coeficientes ...float32) {
 }
 
 /**
+ * @pre: Ingresar por teclado la respuesta correcta.
  *
+ * @post: Si la respuesta es correcta se emite el mensaje "Opcion Correcta" si
+ * 		  el mensaje es errado se emite el mensaje "Opcion Incorrecta"
  */
 func PuntoDos() {
 
