@@ -7,7 +7,7 @@ import (
 // By AgusLacomi
 func main() {
 
-	//PuntoUno(-6.0, 5.0, 4.0, 3.0, 2.0, 1.0)
+	PuntoUno(3.0, 2.0, 1.0)
 
 	PuntoDos()
 
@@ -64,4 +64,16 @@ func PuntoDos() {
 	} else {
 		fmt.Println("Opcion Incorrecta")
 	}
+}
+
+func PuntoTres(valores ...int) {
+
+	var slice []int = valores[0:]
+
+	ordenar()
+
+}
+
+func ordenar(arreglo []int) (int, int) {
+
 }
