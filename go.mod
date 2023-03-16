@@ -1,3 +1,3 @@
-module main
+module guiaCero
 
 go 1.20
