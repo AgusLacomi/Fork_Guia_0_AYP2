@@ -11,7 +11,8 @@ import "fmt"
 func PuntoDos() {
 
 	for i := 1; i < 5; i++ {
-		fmt.Printf("- Opción %d\n", i)
+
+		fmt.Println("- Opción", i)
 	}
 
 	var opcion int

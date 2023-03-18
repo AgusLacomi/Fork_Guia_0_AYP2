@@ -21,7 +21,7 @@ func PuntoTres(valores ...int) {
 	maxValue = slice[len(slice)-1]
 	minValue = slice[0]
 
-	fmt.Printf("El valor mínimo es %v y el valor máximo es %v", minValue, maxValue)
+	fmt.Printf("El valor mínimo es %v y el valor máximo es %v\n", minValue, maxValue)
 }
 
 /**
@@ -29,7 +29,7 @@ func PuntoTres(valores ...int) {
  *
  * @pre: Se debe ingresar un arreglo
  *
- * @post: Se ordena el arreglo de menos a mayor
+ * @post: Se ordena el arreglo de menor a mayor
  */
 func ordenar(slice []int) {
 
