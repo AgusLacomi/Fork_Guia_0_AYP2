@@ -11,5 +11,5 @@ func main() {
 
 	funciones.PuntoDos()
 
-	funciones.PuntoTres()
+	funciones.PuntoTres(5, 4, 1, 2)
 }
