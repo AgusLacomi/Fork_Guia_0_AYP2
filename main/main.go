@@ -5,6 +5,7 @@ import (
 	"guiaCero/arreglos"
 	"guiaCero/estructurasrepetitivas"
 	"guiaCero/funciones"
+	"guiaCero/punteros"
 )
 
 // By AgusLacomi
@@ -44,4 +45,13 @@ func main() {
 	union, interseccion := arreglos.PuntoTres(arregloA, arregloB)
 	fmt.Println("La union entre los dos arreglos es:", union)
 	fmt.Println("La interseccion entre los dos arreglos es:", interseccion)
+
+	/*Punteros*/
+	x := 10
+	y := 1
+	var px = &x
+	var py = &y
+	punteros.Swap(px, py)
+	fmt.Println("Swap de X", x)
+	fmt.Println("Swap de Y:", y)
 }
