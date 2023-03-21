@@ -1,8 +1,14 @@
 package estructurasrepetitivas
 
-import "fmt"
-
-func PuntoTres(numero int) {
+/**
+ * @param numero: variable de tipo entero
+ *
+ * @pre: Se ingresa por parámetro un numero entero para verificar si es un número primo.
+ *
+ * @post: Retorna verdadero en caso de ser un número primo la variable ingresada por parámetro.
+ *
+ */
+func PuntoTres(numero int) bool {
 
 	primo := true
 
@@ -10,6 +16,5 @@ func PuntoTres(numero int) {
 		primo = false
 	}
 
-	fmt.Println("Its", primo, "that this number is prime")
-
+	return primo
 }

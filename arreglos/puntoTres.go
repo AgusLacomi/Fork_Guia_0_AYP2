@@ -1,64 +1,62 @@
 package arreglos
 
-func PuntoTres(arregloA, arregloB []int) {
+import "fmt"
 
-	ordenar(arregloA)
-	ordenar(arregloB)
+func PuntoTres(arregloA, arregloB []int) []int {
 
-	Union := arregloA
+	union := arregloA
 
+	for _, numero := range arregloA {
+
+		for i := 0; i < len(arregloB); i++ {
+
+			if numero != arregloB[i] {
+				union = append(union, arregloB[i])
+			}
+		}
+	}
+
+	union = ordenar(union)
+
+	fmt.Println("despues de ordenar:", union)
+
+	return union
 }
 
 /**
- * @param: Arreglo a ordenar
+ * @param arreglo: Arreglo a ordenar
  *
  * @pre: Se debe ingresar un arreglo
  *
- * @post: Se ordena el arreglo de menos a mayor
+ * @post: Se ordena el arreglo de menor a mayor y se eliminan numeros del arreglo repetidos
  */
-func ordenar(slice []int) {
+func ordenar(arreglo []int) []int {
 
-	for i := 1; i < len(slice); i++ {
+	for i := 1; i < len(arreglo); i++ {
 
 		posicion := i
-		ultimoValor := slice[i]
+		ultimoValor := arreglo[i]
 
-		for posicion >= 1 && ultimoValor < slice[posicion-1] {
-
-			slice[posicion] = slice[posicion-1]
+		for posicion >= 1 && ultimoValor < arreglo[posicion-1] {
+			arreglo[posicion] = arreglo[posicion-1]
 			posicion--
 		}
 
-		slice[posicion] = ultimoValor
-
+		arreglo[posicion] = ultimoValor
 	}
+
+	arreglo = eliminarDuplicados(arreglo)
+
+	return arreglo
 }
 
-func buscar(vector []int, buscado int) bool {
+func eliminarDuplicados(arreglo []int) []int {
 
-	var (
-		inicio     int
-		ultimo     = len(vector) - 1
-		encontrado bool
-	)
+	for i := 0; i < len(arreglo)-1; i++ {
 
-	for inicio <= ultimo {
-
-		posAnalisis := (ultimo + inicio) / 2
-
-		if vector[posAnalisis] == buscado {
-
-			encontrado = true
-
-		} else if vector[posAnalisis] < buscado {
-
-			inicio = posAnalisis
-
-		} else if vector[posAnalisis] > buscado {
-
-			ultimo = posAnalisis
+		if arreglo[i] == arreglo[i+1] {
+			arreglo[i+1] = 0
 		}
-
 	}
-	return encontrado
+
 }

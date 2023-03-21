@@ -1,8 +1,13 @@
 package arreglos
 
-import "fmt"
-
-func PuntoUno(arreglo []int) {
+/**
+ *@param arreglo: Arreglo de tipo entero que contiene los elementos a sumar.
+ *
+ *@pre: Se ingresa un arreglo de tipo entero con los elementos a sumar.
+ *
+ * @post: Retorna la suma de todos los elementos del arreglo.
+ */
+func PuntoUno(arreglo []int) int {
 
 	var sumaElementos int
 
@@ -10,6 +15,5 @@ func PuntoUno(arreglo []int) {
 		sumaElementos += arreglo[i]
 	}
 
-	fmt.Println("La suma de todos los elementos del arreglo ingresado es", sumaElementos)
-
+	return sumaElementos
 }

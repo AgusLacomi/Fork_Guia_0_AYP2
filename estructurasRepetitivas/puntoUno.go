@@ -1,8 +1,13 @@
 package estructurasrepetitivas
 
-import "fmt"
-
-func PuntoUno(numero int) {
+/**
+ * @param numero: numero de tipo entero que se quiere obtener su factorial
+ *
+ * @pre: El factorial no debe ser negativo
+ *
+ * @post: retorna el factorial del numero ingresado por parametro
+ */
+func PuntoUno(numero int) int {
 
 	factorial := 1
 
@@ -10,5 +15,5 @@ func PuntoUno(numero int) {
 		factorial += factorial * i
 	}
 
-	fmt.Printf("El factorial de %v es %v\n", numero, factorial)
+	return factorial
 }

@@ -1,50 +1,29 @@
 package funciones
 
-import "fmt"
-
 /**
  * @param: Enteros que se quiere saber el maximo y el minimo
  *
  * @pre: Se ingresa una cantidad indefinida de enteros
  *
  * @post: Se devuelve el maximo y el minimo de los valores ingresados por parametro
- */
-func PuntoTres(valores ...int) {
-
-	var slice []int = valores[0:]
-
-	maxValue := 0
-	minValue := 0
-
-	ordenar(slice)
-
-	maxValue = slice[len(slice)-1]
-	minValue = slice[0]
-
-	fmt.Printf("El valor mínimo es %v y el valor máximo es %v\n", minValue, maxValue)
-}
-
-/**
- * @param: Arreglo a ordenar
  *
- * @pre: Se debe ingresar un arreglo
- *
- * @post: Se ordena el arreglo de menor a mayor
+ * [20/3/21] No hace falta ordenar un arreglo para devolver el maximo y el minimo
+ * asi se ahorra mas memoria
  */
-func ordenar(slice []int) {
+func PuntoTres(valores ...int) (int, int) {
 
-	for i := 1; i < len(slice); i++ {
+	maxValue := valores[0]
+	minValue := valores[0]
 
-		posicion := i
-		ultimoValor := slice[i]
-
-		for posicion >= 1 && ultimoValor < slice[posicion-1] {
-
-			slice[posicion] = slice[posicion-1]
-			posicion--
+	for _, posicion := range valores[1:] {
+		if posicion > maxValue {
+			maxValue = posicion
 		}
-
-		slice[posicion] = ultimoValor
-
+		if posicion < minValue {
+			minValue = posicion
+		}
 	}
+
+	return minValue, maxValue
+
 }
