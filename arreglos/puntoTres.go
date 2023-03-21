@@ -1,26 +1,44 @@
 package arreglos
 
-import "fmt"
+func PuntoTres(arregloA, arregloB []int) ([]int, []int) {
 
-func PuntoTres(arregloA, arregloB []int) []int {
+	unionDeArreglos := unionDeConjuntos(arregloA, arregloB)
 
-	union := arregloA
+	interseccionDeArreglos := interseccionDeConjuntos(arregloA, arregloB)
 
-	for _, numero := range arregloA {
+	retornoUnion := eliminarRepetidos(unionDeArreglos)
+	retornoInterseccion := eliminarRepetidos(interseccionDeArreglos)
 
-		for i := 0; i < len(arregloB); i++ {
+	return retornoUnion, retornoInterseccion
+}
 
-			if numero != arregloB[i] {
-				union = append(union, arregloB[i])
+func unionDeConjuntos(arregloA []int, arregloB []int) []int {
+
+	unionDeArreglos := arregloA[0:]
+
+	unionDeArreglos = append(unionDeArreglos, arregloB...)
+
+	ordenar(unionDeArreglos)
+
+	return unionDeArreglos
+}
+
+func interseccionDeConjuntos(arregloA, arregloB []int) []int {
+
+	var interseccionDeArreglos []int
+
+	for _, numeroA := range arregloA {
+		for _, numeroB := range arregloB {
+
+			if numeroA == numeroB {
+				interseccionDeArreglos = append(interseccionDeArreglos, numeroA)
 			}
 		}
 	}
 
-	union = ordenar(union)
+	ordenar(interseccionDeArreglos)
 
-	fmt.Println("despues de ordenar:", union)
-
-	return union
+	return interseccionDeArreglos
 }
 
 /**
@@ -45,18 +63,28 @@ func ordenar(arreglo []int) []int {
 		arreglo[posicion] = ultimoValor
 	}
 
-	arreglo = eliminarDuplicados(arreglo)
-
 	return arreglo
 }
 
-func eliminarDuplicados(arreglo []int) []int {
+/**
+ * @param arr: el arreglo original con elementos repetidos
+ *
+ * @pre: arr debe ser un arreglo de enteros
+ *
+ * @post: devuelve un nuevo arreglo sin elementos repetidos arreglos
+ */
+func eliminarRepetidos(arreglo []int) []int {
 
-	for i := 0; i < len(arreglo)-1; i++ {
+	Clave := make(map[int]bool)
 
-		if arreglo[i] == arreglo[i+1] {
-			arreglo[i+1] = 0
+	lista := []int{}
+
+	for _, entrada := range arreglo {
+		if _, value := Clave[entrada]; !value {
+			Clave[entrada] = true
+			lista = append(lista, entrada)
 		}
 	}
 
+	return lista
 }

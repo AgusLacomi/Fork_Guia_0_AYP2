@@ -41,6 +41,7 @@ func main() {
 
 	arregloA := []int{3, 2, 1}
 	arregloB := []int{3, 5, 4, 6}
-	union := arreglos.PuntoTres(arregloA, arregloB)
+	union, interseccion := arreglos.PuntoTres(arregloA, arregloB)
 	fmt.Println("La union entre los dos arreglos es:", union)
+	fmt.Println("La interseccion entre los dos arreglos es:", interseccion)
 }
