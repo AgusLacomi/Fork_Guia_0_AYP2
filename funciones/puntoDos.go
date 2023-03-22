@@ -12,12 +12,12 @@ func PuntoDos() {
 
 	for i := 1; i < 5; i++ {
 
-		fmt.Println("- Opción", i)
+		fmt.Print("\n- Opción", i)
 	}
 
 	var opcion int
 
-	fmt.Println("Seleccione el número PAR que sea MAYOR a 2")
+	fmt.Println("\nSeleccione el número PAR que sea MAYOR a 2")
 	fmt.Print("Opcion: ")
 	fmt.Scanln(&opcion)
 
