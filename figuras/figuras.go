@@ -1,7 +1,7 @@
 package figuras
 
 type Figura interface {
-	Area() int
-	Perimetro() int
+	Area() float32
+	Perimetro() float32
 	ToString() string
 }

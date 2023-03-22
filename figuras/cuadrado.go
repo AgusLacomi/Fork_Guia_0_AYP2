@@ -4,18 +4,18 @@ import "fmt"
 
 type Cuadrado struct {
 	Pto  Punto //esquina inferior izquierda
-	Lado int
+	Lado float32
 }
 
-func (c *Cuadrado) Mover(incX, incY int) {
+func (c *Cuadrado) Mover(incX, incY float32) {
 	c.Pto.Mover(incX, incY)
 }
 
-func (c Cuadrado) Perimetro() int {
+func (c Cuadrado) Perimetro() float32 {
 	return 4 * c.Lado
 }
 
-func (c Cuadrado) Area() int {
+func (c Cuadrado) Area() float32 {
 	return c.Lado * c.Lado
 }
 

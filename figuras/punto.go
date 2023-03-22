@@ -3,8 +3,8 @@ package figuras
 import "fmt"
 
 type Punto struct {
-	X int
-	Y int
+	X float32
+	Y float32
 }
 
 func (p *Punto) ToString() string {
@@ -12,7 +12,7 @@ func (p *Punto) ToString() string {
 	return cadena
 }
 
-func (p *Punto) Mover(x, y int) {
+func (p *Punto) Mover(x, y float32) {
 	p.X += x
 	p.Y += y
 }
