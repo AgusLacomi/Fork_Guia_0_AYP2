@@ -1,5 +1,6 @@
 package figuras
 
+//By AgusLacomi
 import (
 	"fmt"
 	"math"

@@ -21,11 +21,12 @@ func PuntoUno(coeficientes ...float32) {
 		} else if i == 1 {
 			arreglo[i] = fmt.Sprintf(" %+.1f X ", coeficientes[i])
 		} else {
-			arreglo[i] = fmt.Sprintf(" %.1f ", coeficientes[i])
+			arreglo[i] = fmt.Sprintf("\n %.1f ", coeficientes[i])
 		}
 	}
 
 	for _, coeficiente := range arreglo {
 		fmt.Print(coeficiente)
 	}
+	fmt.Println()
 }

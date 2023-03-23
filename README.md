@@ -23,18 +23,18 @@
 
 1. Escribir una función que reciba un arreglo de enteros como parámetros y devuelva la suma de todos sus elementos [OK]
 2. Escribir una función que reciba dos arreglos (que representan vectores) del mismo tamaño y devuelvan la suma y el producto escalar de los vectores [OK]
-3. Escribir una función que reciba dos arreglos A y B, de N y M elementos respectivamente que representan conjuntos de enteros y devuelva una arreglo con la unión y otro con la intersección de A y B. [Falta interfaz]
+3. Escribir una función que reciba dos arreglos A y B, de N y M elementos respectivamente que representan conjuntos de enteros y devuelva una arreglo con la unión y otro con la intersección de A y B. [OK]
 
 <h4>Punteros</h4>
 
-1. Escribir una función con la siguiente firma func swap(px, py *int) que permita intercambiar el valor almacenado en dos variables enteras a través de punteros. [Falta interfaz]
+1. Escribir una función con la siguiente firma func swap(px, py *int) que permita intercambiar el valor almacenado en dos variables enteras a través de punteros. [OK]
 
 <h4>Estructuras e Interfaces</h4>
-1. Agregar al módulo figuras visto en el taller un círculo (representado por un pto que indica el centro y su radio (entero). El círculo debe implementar los métodos de la interface figura. [OK]
+1. Agregar al módulo figuras visto en el taller un círculo representado por un pto que indica el centro y su radio (entero). El círculo debe implementar los métodos de la interface figura.
 2. Escribir un programma que presente un menú con las opciones:
 
 - a. Rectangulo
 - b. Cuadrado
 - c. Circulo
 
-Que le permita al usuario crear 5 figuras y almacenarlas en un arreglo de figuras. Al terminar de cargar las figuras debe mostrar por pantalla todas las figuras almacenadas (usando el ToString) de cada figura.
+Que le permita al usuario crear 5 figuras y almacenarlas en un arreglo de figuras. Al terminar de cargar las figuras debe mostrar por pantalla todas las figuras almacenadas (usando el ToString) de cada figura. [OK]
